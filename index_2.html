@@ -1,0 +1,305 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chania Choli – Rental Management Dashboard</title>
+
+<style>
+h5  {
+     text-align:center ;font-family: Arial;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #1f2937;
+    color: white;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #374151;
+    color: white;
+}
+
+/* MAIN CONTENT */
+.main {
+    margin-left: 230px;
+    padding: 25px;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* DASHBOARD CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #111827;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 26px;
+    margin: 10px 0 0;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #1f2937;
+    color: white;
+}
+
+input, select {
+    width: 95%;
+    padding: 5px;
+}
+
+/* IMAGE GRID */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.image-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 150px;
+    background: #e5e7eb;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>☰ Chania Choli</h2>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#inventory">Dress Inventory</a>
+    <a href="#rentals">Customer Rentals</a>
+    <a href="#images">Dress Images</a>
+    <a href="#revenue">Revenue</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section">
+<h1>Dashboard</h1>
+<div class="cards">
+    <div class="card">
+        <h3>Total Dresses</h3>
+        <p>48</p>
+    </div>
+    <div class="card">
+        <h3>Currently Rented</h3>
+        <p>12</p>
+    </div>
+    <div class="card">
+        <h3>Overdue</h3>
+        <p>3</p>
+    </div>
+    <div class="card">
+        <h3>Total Revenue (₹)</h3>
+        <p>1,25,000</p>
+    </div>
+</div>
+</div>
+
+<!-- INVENTORY -->
+<div id="inventory" class="section">
+<h1>Dress Inventory</h1>
+<table>
+<tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Price (₹)</th>
+</tr>
+<tr>
+    <td>A1</td>
+    <td>Red Bridal Lehenga</td>
+    <td>
+        <select>
+            <option>Available</option>
+            <option>Out on Rent</option>
+        </select>
+    </td>
+    <td><input type="number"></td>
+</tr>
+<tr>
+    <td>A2</td>
+    <td>Green Festive Choli</td>
+    <td>
+        <select>
+            <option>Available</option>
+            <option>Out on Rent</option>
+        </select>
+    </td>
+    <td><input type="number"></td>
+</tr>
+</table>
+</div>
+
+<!-- RENTALS -->
+<div id="rentals" class="section">
+<h1>Customer Rental Entry</h1>
+<table>
+<tr>
+    <th>Customer</th>
+    <th>Phone</th>
+    <th>Dress Code</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Payment</th>
+    <th>Status</th>
+    <th>Overdue</th>
+</tr>
+<tr>
+    <td><input type="text"></td>
+    <td><input type="text"></td>
+    <td><input type="text" placeholder="A1"></td>
+    <td><input type="date"></td>
+    <td><input type="date"></td>
+    <td>
+        <select>
+            <option>Cash</option>
+            <option>UPI</option>
+            <option>Card</option>
+        </select>
+    </td>
+    <td>
+        <select>
+            <option>Paid</option>
+            <option>Pending</option>
+        </select>
+    </td>
+    <td>
+        <select>
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+    </td>
+</tr>
+</table>
+</div>
+
+<!-- IMAGES -->
+<div id="images" class="section">
+<h1>Dress Images</h1>
+
+<h3>Add New Dress Image</h3>
+<input type="file">
+<input type="text" placeholder="Dress Code (A1)">
+<br><br>
+
+<h3>All Dress Images</h3>
+<div class="image-grid">
+    <div class="image-box">
+        <img>
+        <p>A1 – Available</p>
+    </div>
+    <div class="image-box">
+        <img>
+        <p>A2 – Out on Rent</p>
+    </div>
+    <div class="image-box">
+        <img>
+        <p>A3 – Available</p>
+    </div>
+    <div class="image-box">
+        <img>
+        <p>A4 – Overdue</p>
+    </div>
+</div>
+</div>
+
+<!-- REVENUE -->
+<div id="revenue" class="section">
+<h1>Revenue Records</h1>
+<table>
+<tr>
+    <th>Date</th>
+    <th>Dress Code</th>
+    <th>Amount (₹)</th>
+    <th>Received?</th>
+</tr>
+<tr>
+    <td><input type="date"></td>
+    <td><input type="text"></td>
+    <td><input type="number"></td>
+    <td>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </td>
+</tr>
+</table>
+</div>
+
+</div>
+<h5>"This web page is for pitching purposes only,it not intended for use"</h5>
+</body>
+</html>
